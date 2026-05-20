@@ -1,15 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My AI game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodge the Falling Blocks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0b1636, #1b2a5b);
+      color: #f1f7ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    #game-container {
+      text-align: center;
+      width: 640px;
+      padding: 20px;
+      background: rgba(10, 20, 50, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: 2rem;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto 16px;
+      background: #111a38;
+      border: 2px solid #4f7cff;
+      border-radius: 12px;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+    .info-row div {
+      flex: 1;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: #4f7cff;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      background: #7396ff;
+    }
+    #instructions {
+      font-size: 0.95rem;
+      color: #cdd6ff;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 <body>
-
-<h1>AI game goes here</h1>
-
-
-
-<script src="game.js"></script>
+  <div id="game-container">
+    <h1>Dodge the Falling Blocks</h1>
+    <canvas id="gameCanvas" width="640" height="400"></canvas>
+    <div class="info-row">
+      <div>Score: <span id="score">0</span></div>
+      <div>Lives: <span id="lives">3</span></div>
+    </div>
+    <button id="startButton">Start Game</button>
+    <div id="status" style="margin-top: 12px; color: #d3d3ff;">Use ← / → or A / D to move.</div>
+    <div id="instructions">
+      Avoid the falling blocks and survive as long as you can. Every 10 seconds the game speeds up.
+    </div>
+  </div>
+  <script src="game.js"></script>
 </body>
 </html>
 
